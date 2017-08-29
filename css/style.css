@@ -2,13 +2,14 @@ body {
   background-color: #fff;
   overflow-x: hidden; }
 
-nav {
-  min-height: 450px; }
+nav img {
+  max-width: 100%; }
 
 #main {
   min-height: 200px;
   display: flex;
-  flex-flow: row; }
+  flex-flow: row;
+  margin: 20px; }
   #main > article {
     margin: 20px 0;
     padding: 5px;
@@ -18,39 +19,59 @@ nav {
       font-size: 50px; }
 
 #work {
-  display: flex;
-  flex-direction: row;
-  background-color: #e7e5d0; }
-  #work > article {
-    margin: 20px;
-    text-align: center; }
-    #work > article img {
-      max-width: 100%; }
-      #work > article img:hover {
-        background-color: #fff;
-        opacity: .5;
-        transition: .3s; }
+  margin: 20px; }
+  #work > div:first-child {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e7e5d0; }
+  #work .content {
+    display: flex;
+    flex-direction: row;
+    background-color: #e7e5d0; }
+    #work .content > article {
+      margin: 20px;
+      text-align: center; }
+      #work .content > article img {
+        max-width: 100%; }
+        #work .content > article img:hover {
+          background-color: #fff;
+          opacity: .5;
+          transition: .3s; }
 
-header .logo {
-  float: left; }
-  header .logo > img {
-    width: 50px; }
+header {
+  min-height: 80px; }
+  header .logo {
+    float: left; }
+    header .logo > img {
+      width: 50px; }
+  header .navbar {
+    float: right; }
+    header .navbar > ul li {
+      display: inline-flex;
+      padding: 10px; }
 
-header .navbar {
-  float: right; }
-  header .navbar > ul li {
-    display: inline-flex;
-    padding: 10px; }
-
-footer {
+#footer-wrap {
   color: #fff;
-  background: #000;
-  display: block;
-  min-height: 100px;
-  text-align: center; }
+  background: #222; }
+  #footer-wrap #footer {
+    display: flex;
+    flex-direction: row;
+    word-wrap: break-word;
+    padding: 20px; }
+    #footer-wrap #footer > article {
+      flex: 100%;
+      margin: 10px;
+      line-height: 2.5em; }
+      #footer-wrap #footer > article > ul li {
+        border-bottom: 1px solid #fff; }
+  #footer-wrap footer {
+    color: #fff;
+    background: #000;
+    display: block;
+    min-height: 100px;
+    text-align: center; }
 
 @media all and (max-width: 640px) {
-  #main, #work {
+  #main, #work, #footer-wrap #footer {
     flex-direction: column; }
   nav, #main > aside, header, footer {
     min-height: 100px;
