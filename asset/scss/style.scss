@@ -5,7 +5,9 @@ body {
 
 nav {
   img {
-    max-width:100%;
+    width:100%;
+    height: 300px;
+    object-fit: cover;
   }
 }
 
@@ -24,6 +26,55 @@ nav {
       & > span {
         font-size: 50px;
       }
+    }
+  }
+}
+
+#menu_div {
+  display: none;
+  cursor: pointer;
+  .bar,
+  .bar:after,
+  .bar:before {
+    width: 25px;
+    height: 5px;
+  }
+
+  .bar {
+    position: relative;
+    transform: translateY(25px);
+    background-color: rgba(0, 0, 0, 1);
+    transition: all 0ms .3s;
+    &.animate {
+      background-color: rgba(255, 255, 255, 0);
+      &::after {
+        top: 0;
+        transform: rotate(45deg);
+        transition: top .3s cubic-bezier(0.23, 1, 0.32, 1), transform .3s .3s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      &::before {
+        bottom: 0;
+        transform: rotate(-45deg);
+        transition: top .3s cubic-bezier(0.23, 1, 0.32, 1), transform .3s .3s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 10px;
+      background-color: rgba(0, 0, 0, 1);
+      transition: bottom .3s .3s cubic-bezier(0.23, 1, 0.32, 1), transform .3s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      background: rgba(0, 0, 0, 1);
+      transition: top .3s .3s cubic-bezier(0.23, 1, 0.32, 1), transform .3s cubic-bezier(0.23, 1, 0.32, 1);
     }
   }
 }
@@ -48,7 +99,7 @@ nav {
         &:hover {
           background-color: #fff;
           opacity: .5;
-          transition: .3s;
+          transition: all 0.5s ease;
         }
       }
     }
@@ -110,9 +161,33 @@ header {
   #main, #work, #footer-wrap #footer{
     flex-direction: column;
   }
-
   nav, #main > aside, header, footer {
     min-height: 100px;
     max-height: 450px;
+  }
+  nav img {
+    height: 100%;
+    transition: all 0.5s ease;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    display: none;
+
+    & > ul {
+      display: grid;
+      background-color: #e7e5d0;
+      transition: .1s;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+  #menu_div {
+    display: block;
+    float: right;
+    padding: 15px 20px;
+    height: 60px;
   }
 }
