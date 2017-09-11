@@ -1,3 +1,3 @@
 # flexbox-RWD
 
-使用flexbox屬性挑戰ＲＷＤ介面
+單純使用flexbox，來建構RWD網站，部分使用bootstrap icon.

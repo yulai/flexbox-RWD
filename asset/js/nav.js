@@ -1,7 +1,12 @@
 $(function(){
-  $('#menu_div').click(function(e){
+  $('#menu, [data-type="close"]').click(function(e){
     e.preventDefault()
-    $('.bar').toggleClass('animate')
-    $('.navbar').slideToggle()
+    $('.bottom_menu').slideToggle()
   })
+
+  // $(window).resize(function() {
+  //   if ($(window).width() > 480 && $('.navbar').is(':hidden')) {
+  //     $('.navbar').removeAttr('style')
+  //   }
+  // )}
 })

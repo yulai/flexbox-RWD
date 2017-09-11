@@ -1,1 +1,1 @@
-$(function(){$("#menu_div").click(function(e){e.preventDefault(),$(".bar").toggleClass("animate"),$(".navbar").slideToggle()})});
+$(function(){$('#menu, [data-type="close"]').click(function(e){e.preventDefault(),$(".bottom_menu").slideToggle()})});
