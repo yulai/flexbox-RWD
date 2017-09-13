@@ -2,10 +2,66 @@ body {
   background-color: #fff;
   overflow-x: hidden; }
 
-nav img {
+.slideshow {
   width: 100%;
-  height: 300px;
-  object-fit: cover; }
+  height: 450px;
+  overflow: hidden;
+  position: relative; }
+  .slideshow .slideshow-slides {
+    height: 100%;
+    width: 100%;
+    position: absolute; }
+    .slideshow .slideshow-slides .slide {
+      overflow: hidden;
+      position: absolute;
+      width: 100%; }
+    .slideshow .slideshow-slides img {
+      position: absolute; }
+  .slideshow .slideshow-nav a,
+  .slideshow .slideshow-indicator a {
+    overflow: hidden; }
+  .slideshow .slideshow-nav a:before,
+  .slideshow .slideshow-indicator a:before {
+    content: url("../asset/image/sprites.png");
+    display: inline-block;
+    font-size: 0;
+    line-height: 0; }
+  .slideshow .slideshow-nav a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 72px;
+    height: 72px;
+    margin-top: -36px; }
+    .slideshow .slideshow-nav a.prev {
+      margin-left: -480px; }
+      .slideshow .slideshow-nav a.prev::before {
+        margin-top: -20px; }
+    .slideshow .slideshow-nav a.next {
+      margin-left: 400px; }
+      .slideshow .slideshow-nav a.next::before {
+        margin-left: -80px;
+        margin-top: -20px; }
+    .slideshow .slideshow-nav a.disabled {
+      display: none; }
+  .slideshow .slideshow-indicator {
+    bottom: 100px;
+    height: 16px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center; }
+    .slideshow .slideshow-indicator a {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      margin: 0 3px; }
+      .slideshow .slideshow-indicator a::before {
+        margin-left: -110px; }
+      .slideshow .slideshow-indicator a.active {
+        cursor: default; }
+        .slideshow .slideshow-indicator a.active::before {
+          margin-left: -130px; }
 
 #main {
   min-height: 200px;
